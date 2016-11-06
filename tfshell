@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cdir=$(pwd)
+
+docker run                \
+  -it                     \
+  --rm                    \
+  -p 8888:8888            \
+  -v $cdir:/opt/tfsrc     \
+  --name tfshell          \
+  rogovski/tensorflow     \
+  /bin/bash
